@@ -6,18 +6,18 @@
 
 ### 关于
 
-将大的代码库拆分相互分离的具有独立版本的包，对代码得分享十分有利。然而，这使得跨多仓库的改动是比较杂乱且很难追踪，同时跨仓库测试很快就会变得很复杂。
+将大的代码库拆分相互分离的具有独立版本的包，对代码的分享十分有利。然而，这使得横跨多个仓库的改动比较杂乱，难以追踪；同时跨仓库的测试很快就会变得很复杂。
 
-为了解决这些问题（其实还有很多其他问题），一些项目会将他们的代码库放到一个多个包的仓库中。比如这些项目：Babel，React, Angular, Ember, Meteor, Jest；同时还有很多别的项目用一个代码库开发他们所有的包。
+为了解决这些问题（还有别的为提到的问题），一些项目会将他们的代码库放到一个多个包的仓库中。比如：Babel，React, Angular, Ember, Meteor, Jest；同时还有很多别的项目用一个代码库来开发他们所有的包。
 
-Lerna是一个能优化工作流的工具，围绕管理多包的仓库通过用git和npm。
+Lerna是一个工作流工具，能优化多包仓库的git和npm的管理。
 
 
 ### 快速上手
 
 通过npm来全局安装lerna：
 
-Lerna 2.x 是推荐用来上手的版本。
+推荐使用 Lerna 2.x 版本
 
 `$ npm install —global lerna`
 
@@ -29,7 +29,7 @@ Lerna 2.x 是推荐用来上手的版本。
 
 `$ lerna init`
 
-你的仓库的目录结构如下：
+仓库的目录结构如下：
 
 ```
 lerna-repo/
@@ -42,70 +42,58 @@ lerna-repo/
 
 下面是对每个命令的简单介绍。访问 README 来获取更详细的信息。
 
-```
-**lerna init**
 
-创建一个新的lerna 仓库 或者 将已存在的仓库的Lerna版本升级。
-
-参数
-
-`—independent` / `-i` - 启用独立版本模式
-```
-
-```
-**lerna bootstarp**
-
-在当前Lerna仓库引导包。安装所有依赖并且link所有的交叉依赖。
-
-这个命令是至关重要的，它允许你在`require()`中是使用你的包的名称，就好比这些包已经存在并且已经存在在`node_modules`目录一样。
-```
-
-```
-lerna import <pathToRepo>
+> **lerna init**
+>
+> 创建一个新的lerna 仓库 或者 将已存在的仓库的Lerna版本升级。
+>
+> 参数
+>
+> `—independent` / `-i` - 启用独立版本模式
 
 
-引入本地路径<pathToRepo>下的这个包到 packages/<directory-name>，会产生commit history。
-```
+> **lerna bootstarp**
+>
+> 在当前Lerna仓库引导包。安装所有依赖并且link所有的交叉依赖。
+>
+> 这个命令是至关重要的，它允许你在`require()`中是使用你的包的名称，就好比这些包已经存在并且已经存在在`node_modules`目录一样。
 
-```
-lerna publish
 
-在一个包已经被更新后，创建一次新的发布。指定一个新版本，并且在git和npm上更新所有的包。
+> **lerna import <pathToRepo>**
+>
+> 引入本地路径<pathToRepo>下的这个包到 packages/<directory-name>，会产生commit history。
 
-参数
 
-`—npm-tag [tagname]` - 使用给定的npm的dist-tag发布npm
+> **lerna publish**
+>
+> 在一个包已经被更新后，创建一次新的发布。指定一个新版本，并且在git和npm上更新所有的包。
+>
+> 参数
+>
+> `—npm-tag [tagname]` - 使用给定的npm的dist-tag发布npm
+>
+> `—canary` / `-c` - 创建一个canary版的发布
+>
+> `—skip-git` - 跳过所有git操作
+>
+> `—force-publish [packages]` - 对给定的包（多个包以逗号分隔）执行强制发布，或使用`*`来指定所有包；跳过变化包的git diff检查。
 
-`—canary` / `-c` - 创建一个canary版的发布
 
-`—skip-git` - 跳过所有git操作
+> **lerna changed**
+>
+> 检查哪些包自上次发布以后发生了变动
 
-`—force-publish [packages]` - 对给定的包（多个包以逗号分隔）执行强制发布，或使用`*`来指定所有包；跳过变化包的git diff检查。
-```
+> **lerna diff [package?]**
+>
+> 查看所有包或指定包自上次发布以后发生变动的差异点
 
-```
-lerna changed
+> **lerna run [script]**
+>
+> 执行包含指定命令的的每个包内的这条npm script。
 
-检查那些包自上次发布以后发生了变动
-```
-
-```
-lerna diff [package?]
-
-查看所有包或指定包自上次发布以后发生变动的差异点
-```
-
-```
-lerna run [srcipt]
-
-执行包含指定命令的的每个包内的这条npm script。
-```
-
-```
-lerna ls
-
-列出当前Lerna仓库的所有公共包。
-```
+> **lerna ls**
+>
+> 列出当前Lerna仓库的所有公共包。
 
 
 ### 谁在用 Lerna？

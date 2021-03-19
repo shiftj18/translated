@@ -1,10 +1,6 @@
 ## [译] Lerna
 
-原文地址： https://lerna.js.org
-
-翻译： shiftj
-
-![](https://lerna.js.org/images/lerna-hero.svg)
+<img src="https://user-images.githubusercontent.com/645641/79596653-38f81200-80e1-11ea-98cd-1c6a3bb5de51.png" style="max-width: 500px;" />
 
 一个管理Javascript多包项目的工具。
 
@@ -195,4 +191,8 @@ lerna-repo/
 * stoplightio/prism
 
 
+----
 
+原文地址： https://lerna.js.org
+
+翻译： shiftj

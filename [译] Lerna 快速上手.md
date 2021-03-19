@@ -1,9 +1,10 @@
-[译] Lerna
+## [译] Lerna
 
 原文地址： https://lerna.js.org
+
 翻译： shiftj
 
-关于
+### 关于
 
 将大的代码库拆分相互分离的具有独立版本的包，对代码得分享十分有利。然而，这使得跨多仓库的改动是比较杂乱且很难追踪，同时跨仓库测试很快就会变得很复杂。
 
@@ -12,7 +13,7 @@
 Lerna是一个能优化工作流的工具，围绕管理多包的仓库通过用git和npm。
 
 
-快速上手
+### 快速上手
 
 通过npm来全局安装lerna：
 
@@ -32,33 +33,31 @@ Lerna 2.x 是推荐用来上手的版本。
 
 ```
 lerna-repo/
-    package/
-    package.json
-    lerna.json
+  - package/
+  - package.json
+  - lerna.json
 ```
 
-命令
+### 命令
 
 下面是对每个命令的简单介绍。访问 README 来获取更详细的信息。
 
 ```
-lerna init
+**lerna init**
 
 创建一个新的lerna 仓库 或者 将已存在的仓库的Lerna版本升级。
 
 参数
 
 `—independent` / `-i` - 启用独立版本模式
-
 ```
 
 ```
-lerna bootstarp
+**lerna bootstarp**
 
 在当前Lerna仓库引导包。安装所有依赖并且link所有的交叉依赖。
 
 这个命令是至关重要的，它允许你在`require()`中是使用你的包的名称，就好比这些包已经存在并且已经存在在`node_modules`目录一样。
-
 ```
 
 ```
@@ -109,7 +108,7 @@ lerna ls
 ```
 
 
-谁在用 Lerna？
+### 谁在用 Lerna？
 
 * primer/primer
 * babel/babel
@@ -202,7 +201,6 @@ lerna ls
 * graycoreio/daffodil
 * typescript-eslint/typescript-eslint
 * stoplightio/prism
-
 
 
 

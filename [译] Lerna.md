@@ -1,6 +1,6 @@
 ## [译] Lerna
 
-<img src="https://user-images.githubusercontent.com/645641/79596653-38f81200-80e1-11ea-98cd-1c6a3bb5de51.png" style="max-width: 500px;" />
+<img src="https://user-images.githubusercontent.com/645641/79596653-38f81200-80e1-11ea-98cd-1c6a3bb5de51.png" width="480px" />
 
 一个管理Javascript多包项目的工具。
 
